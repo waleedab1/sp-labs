@@ -1,0 +1,8 @@
+all: task2a
+
+task2a: task2a.o
+	ld -m elf_i386 task2a.o -o task2a
+task2a.o: task2a.s
+	nasm -f elf32 task2a.s -o task2a.o
+clean:
+	rm -f *.o task2a
